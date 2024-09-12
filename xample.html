@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Typing Test</title>
+    <link rel="stylesheet" href="Assets/CSS/styles.css">
+    <script  src="Assets/Javascript/script.js"></script>
+</head>
+<style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.test-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    min-height: 80vh;
+}
+
+.test-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #e2e2e2;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.test-box {
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.test-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.test-stats p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+</style>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+        <a href="#" class="logo">SpeedType</a>
+        <ul class="nav-menu">
+            <li><a href="#test" class="nav-link">Take Test</a></li>
+            <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<section id="test" class="test-section">
+    <div class="test-container">
+        <h1>Speed Typing Test</h1>
+        <p class="test-paragraph">Test your typing speed by typing the text below as fast and accurately as you can!</p>
+        <div class="test-box">
+            <p id="text-to-type"></p>
+            <textarea id="input-box" rows="4" placeholder="Start typing here..." autofocus></textarea>
+        </div>
+        <div class="test-stats">
+            <p>Time Left: <span id="time-left">60</span> seconds</p>
+            <p>Words Per Minute: <span id="wpm">0</span></p>
+            <p>Accuracy: <span id="accuracy">100%</span></p>
+        </div>
+        <button id="restart-btn" class="btn">Restart Test</button>
+    </div>
+</section>
+
+<script>
+    const textToTypeElement = document.getElementById('text-to-type');
+const inputBox = document.getElementById('input-box');
+const timeLeftElement = document.getElementById('time-left');
+const wpmElement = document.getElementById('wpm');
+const accuracyElement = document.getElementById('accuracy');
+const restartButton = document.getElementById('restart-btn');
+
+const testTexts = [
+    "The quick brown fox jumps over the lazy dog.",
+    "Practice makes perfect. Keep typing until you achieve a high score.",
+    "Typing fast without looking at the keyboard is a useful skill."
+];
+let timeLeft = 60;
+let timer;
+let totalWordsTyped = 0;
+let correctCharsTyped = 0;
+let totalCharsTyped = 0;
+let isTestStarted = false;
+let testText = "";
+
+// Initialize the test
+function startTest() {
+    testText = testTexts[Math.floor(Math.random() * testTexts.length)];
+    textToTypeElement.innerHTML = testText;
+    inputBox.value = "";
+    inputBox.disabled = false;
+    totalWordsTyped = 0;
+    correctCharsTyped = 0;
+    totalCharsTyped = 0;
+    timeLeft = 60;
+    isTestStarted = true;
+    updateStats();
+    inputBox.focus();
+    clearInterval(timer);
+    timer = setInterval(countdown, 1000);
+}
+
+// Countdown function
+function countdown() {
+    if (timeLeft > 0) {
+        timeLeft--;
+        timeLeftElement.innerText = timeLeft;
+    } else {
+        endTest();
+    }
+}
+
+// End the test
+function endTest() {
+    clearInterval(timer);
+    inputBox.disabled = true;
+    isTestStarted = false;
+    calculateWPM();
+}
+
+// Calculate Words Per Minute (WPM)
+function calculateWPM() {
+    const wordsTyped = inputBox.value.trim().split(' ').filter(word => word.length > 0).length;
+    totalWordsTyped = wordsTyped;
+    wpmElement.innerText = totalWordsTyped;
+}
+
+// Calculate Accuracy
+function calculateAccuracy() {
+    const inputText = inputBox.value;
+    totalCharsTyped = inputText.length;
+
+    correctCharsTyped = 0;
+    for (let i = 0; i < inputText.length && i < testText.length; i++) {
+        if (inputText[i] === testText[i]) {
+            correctCharsTyped++;
+        }
+    }
+
+    const accuracy = (correctCharsTyped / totalCharsTyped) * 100 || 0;
+    accuracyElement.innerText = `${accuracy.toFixed(2)}%`;
+}
+
+// Update the stats in real-time
+function updateStats() {
+    calculateWPM();
+    calculateAccuracy();
+}
+
+// Event listener for typing input
+inputBox.addEventListener('input', () => {
+    if (!isTestStarted) startTest();
+    updateStats();
+});
+
+// Event listener for restart button
+restartButton.addEventListener('click', startTest);
+
+// Start the initial test
+startTest();
+
+</script>
+</body>
+</html>
+
