@@ -1,16 +1,4 @@
 //............Page interactions...............// 
-let display = document.getElementById("display");
-
-
-let page1 =document.getElementById("page-1")
-let page2 =document.getElementById("page-2")
-function hidePage(){
-  page2.display ="none";
-}
-function changePage(){
-  page1.display = "none";
-  page2.display = "block";
-}
 
 function showPage(pageId) {
   // Hide all sections
@@ -26,6 +14,16 @@ function showPage(pageId) {
   }
 }
 
+    //........................... Add active class to the current button (highlight it)
+    var header = document.getElementById("column-1");
+    var btns = header.getElementsByClassName("row");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+      });
+    }
 
 
 
@@ -63,8 +61,6 @@ let accuracy_group = document.querySelector(".accuracy");
 
 
 
-
-/*
 let timeLeft = TIME_LIMIT;
 let timeElapsed = 0;
 let total_errors = 0;
@@ -222,4 +218,4 @@ function resetValues() {
   restart_btn.style.display = "none";
   cpm_group.style.display = "none";
   wpm_group.style.display = "none";
-} */
+}
