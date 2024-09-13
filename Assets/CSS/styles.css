@@ -224,6 +224,7 @@ body{
 .row p{
     font-size: 14px;
    margin: 0 2rem;
+   color: black;
 }
 
 .active, .row:hover {
@@ -240,6 +241,23 @@ body{
 }
 
   /*.............................................Toggler................................*/
+/* Light Theme */
+body.light-theme {
+ 
+  color: #000000;
+    background-color: #9cb7d6;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Optional styles for smooth transition */
+body {
+  transition: background-color 0.2s, color 0.2s;
+}
 
 .ui-switch {
     /* switch */
@@ -538,6 +556,7 @@ button {
     background: radial-gradient(#fff, #ffd6d6);
     height: auto;
     width: 100%;
+    color: black;
     text-align: center;
     padding: 15px 0;
     font-weight: bold;
