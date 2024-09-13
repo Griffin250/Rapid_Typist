@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Example</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showSection('section1')">Show Section 1</button>
+    <button onclick="showSection('section2')">Show Section 2</button>
+    <button onclick="showSection('section3')">Show Section 3</button>
+    
+    <div id="section1" class="hidden">
+        <h1>Section 1</h1>
+        <p>This is the first section.</p>
+    </div>
+
+    <div id="section2" class="hidden">
+        <h1>Section 2</h1>
+        <p>This is the second section.</p>
+    </div>
+
+    <div id="section3" class="hidden">
+        <h1>Section 3</h1>
+        <p>This is the third section.</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('div[id^="section"]');
+            sections.forEach(function(section) {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            var sectionToShow = document.getElementById(sectionId);
+            if (sectionToShow) {
+                sectionToShow.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

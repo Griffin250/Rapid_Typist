@@ -1,5 +1,33 @@
 //............Page interactions...............// 
-var display = document.getElementById("display");
+let display = document.getElementById("display");
+
+
+let page1 =document.getElementById("page-1")
+let page2 =document.getElementById("page-2")
+function hidePage(){
+  page2.display ="none";
+}
+function changePage(){
+  page1.display = "none";
+  page2.display = "block";
+}
+
+function showPage(pageId) {
+  // Hide all sections
+  var pages = document.querySelectorAll('div[id^="page"]');
+  pages.forEach(function(page) {
+      page.classList.add('hidden');
+  });
+
+  // Show the selected section
+  var pageToShow = document.getElementById(pageId);
+  if (pageToShow) {
+      pageToShow.classList.remove('hidden');
+  }
+}
+
+
+
 
 
 
@@ -33,6 +61,10 @@ let wpm_group = document.querySelector(".wpm");
 let error_group = document.querySelector(".errors");
 let accuracy_group = document.querySelector(".accuracy");
 
+
+
+
+/*
 let timeLeft = TIME_LIMIT;
 let timeElapsed = 0;
 let total_errors = 0;
@@ -190,4 +222,4 @@ function resetValues() {
   restart_btn.style.display = "none";
   cpm_group.style.display = "none";
   wpm_group.style.display = "none";
-}
+} */

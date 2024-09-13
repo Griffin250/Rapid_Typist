@@ -50,20 +50,21 @@
 
 <div class="column-wrapper">
     <div class="column column-1" id="column-1">
-        <div class="row row-1 active " id="row-1">
+
+        <div class="row row-1 active " id="row-1" onclick="showPage('page1')">
             <h2 class="sidebar-links "><i class="fa-solid fa-caret-right"></i> Beginner Typing Tests</h2>
             <p>Top 200 words</p>
         </div><hr>
        
-        <div class="row row-2" id="row-2">
+        <div class="row row-2" id="row-2"  onclick="showPage('page2')">
             <h2 class="sidebar-links"> <i class="fa-solid fa-forward"></i> Advanced Typing Tests</h2>
             <p>Top 500 words</p>
         </div><hr>
-        <div class="row row-3" id="row-2">
+        <div class="row row-3" id="row-2" onclick="showPage('page3')">
             <h2 class="sidebar-links"><i class="fa-solid fa-gears"></i> Custom Typing Test </h2>
             <p>Create Your own!</p>
         </div><hr>
-        <div class="row row-4" id="row-4">
+        <div class="row row-4" id="row-4" onclick="showPage('page4')">
             <h2 class="sidebar-links"><i class="fa-solid fa-medal"></i> Typing Competition</h2>
             <p>Who can Type Fastest? </p>
         </div><hr>
@@ -85,7 +86,8 @@
        
         <!----------------------------------------------------------------------------->
   <div class="container">
-    <div class="page-1" id="page-1">
+    <!------------------------Page 1---------------------->
+    <div class="page-1" id="page1">
     <div class="header">
       <div class="wpm">
         <div class="header_text">WPM</div>
@@ -111,15 +113,105 @@
 
     <div class="quote">Click on the area below to start the game.</div>
     <textarea class="input_area" placeholder="Start typing here..." oninput="processCurrentText()"onfocus="startGame()"></textarea>
-    <button class="restart_btn" onclick="resetValues()">Restart</button>
+
+    <!---------<button class="restart_btn" onclick="resetValues()">Restart</button>--------->
+    
+<button class="restart_btn" onclick="resetValues()">
+  <span class="shadow"></span>
+  <span class="edge"></span>
+  <span class="front text"> Restart</span>
+</button>
     </div>  
-
-    <div class="page-2" id="page-2">
-
+<!---------------------------------------Page 2---------------------------->
+    <div class="page-2 hidden" id="page2">
+      <h2>Advanced Typing Tests</h2>
+      <div class="header">
+        <div class="wpm">
+          <div class="header_text">WPM</div>
+          <div class="curr_wpm">100</div>
+        </div>
+        <div class="cpm">
+          <div class="header_text">CPM</div>
+          <div class="curr_cpm">100</div>
+        </div>
+        <div class="errors">
+          <div class="header_text">Errors</div>
+          <div class="curr_errors">0</div>
+        </div>
+        <div class="timer">
+          <div class="header_text">Time</div>
+          <div class="curr_time">60s</div>
+        </div>
+        <div class="accuracy">
+          <div class="header_text">% Accuracy</div>
+          <div class="curr_accuracy">100</div>
+        </div>
+      </div>
+  
+      <div class="quote">Click on the area below to start the game.</div>
+      <textarea class="input_area" placeholder="Start typing here..." oninput="processCurrentText()"onfocus="startGame()"></textarea>
+  
+      <!---------<button class="restart_btn" onclick="resetValues()">Restart</button>--------->
+      
+  <button class="restart_btn" onclick="resetValues()">
+    <span class="shadow"></span>
+    <span class="edge"></span>
+    <span class="front text"> Restart</span>
+  </button>
     </div>
-  </div> <!-----------------container clossing------------->
-      </div> <!---------------Column 2 closing------------->
-          </div> <!--------------Column-wrapper clossing------------------>
+
+    <!---------------------------------------Page 3---------------------------->
+    <div class="page-3 hidden" id="page3" onclick="showPage('page3')">
+      <h2>Custom Typing Tests</h2>
+      <div class="header">
+        <div class="wpm">
+          <div class="header_text">WPM</div>
+          <div class="curr_wpm">100</div>
+        </div>
+        <div class="cpm">
+          <div class="header_text">CPM</div>
+          <div class="curr_cpm">100</div>
+        </div>
+        <div class="errors">
+          <div class="header_text">Errors</div>
+          <div class="curr_errors">0</div>
+        </div>
+        <div class="timer">
+          <div class="header_text">Time</div>
+          <div class="curr_time">60s</div>
+        </div>
+        <div class="accuracy">
+          <div class="header_text">% Accuracy</div>
+          <div class="curr_accuracy">100</div>
+        </div>
+      </div>
+  
+      <div class="quote">Click on the area below to start the game.</div>
+      <textarea class="input_area" placeholder="Start typing here..." oninput="processCurrentText()"onfocus="startGame()"></textarea>
+  
+      <!---------<button class="restart_btn" onclick="resetValues()">Restart</button>--------->
+      
+  <button class="restart_btn" onclick="resetValues()">
+    <span class="shadow"></span>
+    <span class="edge"></span>
+    <span class="front text"> Restart</span>
+  </button>
+    </div>
+<!------------------------------Page 4--------------------------------------------->
+    <div class="page-4 hidden" id="page4" onclick="showPage('page3')">
+<h2>Welcome to Typing Competions!</h2>
+<p>Lets see who can type faster!</p>
+
+<div class="inputs">
+  <label for="Username">Enter Username <br>
+  <input type="text" placeholder="Username" class="username">
+</label>
+</div>
+    </div>
+    
+  </div> 
+      </div> 
+          </div>
 
 </section>
 <!--------------------------------------------Footer section---------------------------->
@@ -139,6 +231,6 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 </script>
-   <!---<script src="Assets/Javascript/script.js" type="text/javascript"> </script>
+ <script src="Assets/Javascript/script.js" type="text/javascript"> </script>
 </body>
 </html>

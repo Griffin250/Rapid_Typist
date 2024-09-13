@@ -329,6 +329,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin:50px auto;
   }
   
   .heading {
@@ -373,9 +374,9 @@ body{
   .quote {
     background-color: #769bc5;
     font-size: 1.5rem;
-    margin: 10px;
-    padding: 30px;
-    width: 75%;
+    margin: 15px auto;
+    padding: 20px;
+    width: 100%;
     border-radius: 4px;
     box-shadow: black 2px 2px 2px;
   }
@@ -385,7 +386,7 @@ body{
    font-family: arial, sans-serif;
     height: 80px;
     overflow: hidden;
-    width: 75%;
+    width: 100%;
     font-size: 20px;
     margin: 15px auto;
     padding: 20px;
@@ -401,22 +402,135 @@ body{
     outline: 1px solid black;
   }
   .incorrect_char {
-    color: orangered;
-    text-decoration: underline;
+color: orangered;
   }
   
   .correct_char {
-    color:green;
+color: green;
+
   }
-  
+  .hidden{
+    display: none;
+  }
+  .inputs{
+    margin: 50% auto;
+  }
+  input{
+ height: 3rem;
+ width: 20rem;
+  }
+  ::placeholder{
+    padding: 2rem 0;
+    margin: 0 5px ;
+  }
+  /*........................................................./*
   .restart_btn {
     display: none;
     background-color: #326765;
     font-size: 1.5rem;
     padding: 10px;
     border: 0px;
-    box-shadow: black 5px 8px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: auto;
+    box-shadow: black 2px 2px 2px;
   }
+  .restart_btn:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+    /*............................................*/
+    
+  /*-------------- From Uiverse.io by cssbuttons-io---------------------- */ 
+button {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  touch-action: manipulation;
+ }
+ 
+ .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform
+     600ms
+     cubic-bezier(.3, .7, .4, 1);
+ }
+ 
+ .edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+     to left,
+     hsl(340deg 100% 16%) 0%,
+     hsl(340deg 100% 32%) 8%,
+     hsl(340deg 100% 32%) 92%,
+     hsl(340deg 100% 16%) 100%
+   );
+ }
+ 
+ .front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform
+     600ms
+     cubic-bezier(.3, .7, .4, 1);
+ }
+ 
+ button:hover {
+  filter: brightness(110%);
+ }
+ 
+ button:hover .front {
+  transform: translateY(-6px);
+  transition: transform
+     250ms
+     cubic-bezier(.3, .7, .4, 1.5);
+ }
+ 
+ button:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+ }
+ 
+ button:hover .shadow {
+  transform: translateY(4px);
+  transition: transform
+     250ms
+     cubic-bezier(.3, .7, .4, 1.5);
+ }
+ 
+ button:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+ }
+ 
+ button:focus:not(:focus-visible) {
+  outline: none;
+ }
 
   /*......................................................Footer...............................*/
   footer{
