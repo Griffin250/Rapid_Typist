@@ -62,9 +62,46 @@
       </label>
         </div>
         <div class="nav-container-2">
-            <ul class="other-links">
-                <li class="Lang"><a href="" class="link ">Language: English   </a></li>
-            </ul>
+          <h3 style="color: white;">Language: 
+            <select class="languages"> 
+<option value="English">English</option>
+<option value="">Norsk</option>
+<option value="">Danish</option>
+<option value="">Greek</option>
+<option value="">German</option>
+<option value="">English</option>
+<option value="">Norsk</option>
+<option value="">Danish</option>
+<option value="">Greek</option>
+<option value="">German</option>
+<option value="">English</option>
+<option value="english">English</option>
+<option value="french">French</option>
+<option value="german">German</option>
+<option value="spanish">Spanish</option>
+<option value="chinese">Chinese</option>
+<option value="japanese">Japanese</option>
+<option value="russian">Russian</option>
+<option value="arabic">Arabic</option>
+<option value="hindi">Hindi</option>
+<option value="portuguese">Portuguese</option>
+<option value="">Norsk</option>
+<option value="">Danish</option>
+<option value="">Greek</option>
+<option value="">German</option>
+<option value="">English</option>
+<option value="">Norsk</option>
+<option value="">Danish</option>
+<option value="">Greek</option>
+<option value="">German</option>
+<option value="">English</option>
+<option value="">Norsk</option>
+<option value="">Danish</option>
+<option value="">Greek</option>
+<option value="">German</option>
+          </select>
+        </h3>
+ 
             
 <a href="" class="account-link link">Login / Create Account</a>
 
@@ -99,18 +136,22 @@
             <h2 class="sidebar-links"><i class="fa-solid fa-medal"></i> Typing Competition</h2>
             <p>Who can Type Fastest? </p>
         </div><hr>
-        <div class="row row-5" id="row-5">
+        <div class="row row-5" id="row-5" onclick="showPage('page5')">
             <h2 class="sidebar-links"><i class="fa-solid fa-people-line"></i> Multiplayer Typing Tests</h2>
             <p>Play against others</p>
         </div><hr>
-        <div class="row row-6" id="row-6">
+        <div class="row row-6" id="row-6"  onclick="showPage('page6')">
             <h2  class="sidebar-links"><i class="fa-solid fa-signal"></i> Top 1000 </h2>
             <p>Unlock the Top 1000 words of your own language</p>
         </div><hr>
-        <div class="row row-7" id="row-7">
+        <div class="row row-7" id="row-7" onclick="showPage('page7')">
             <h2 class="sidebar-links"><i class="fa-solid fa-file-lines"></i> Text Practice</h2>
             <p>Practice your own Text </p>
-        </div>
+        </div><hr>
+        <div class="row row-8" id="row-8" onclick="showPage('page8')">
+          <h2 class="sidebar-links"><i class="fa-solid fa-certificate"></i> Take a Certified Test</h2>
+          <p>Earn a Cerificate for your Skills </p>
+      </div>
     </div>
     
     <div class="column column-2" id="display">
@@ -155,7 +196,7 @@
     </div>  
 <!---------------------------------------Page 2---------------------------->
     <div class="page-2 hidden" id="page2">
-      <h2>Advanced Typing Tests</h2>
+      <h1>Advanced Typing Tests</h1>
       <div class="header">
         <div class="wpm">
           <div class="header_text">WPM</div>
@@ -184,7 +225,7 @@
   
       <!---------<button class="restart_btn" onclick="resetValues()">Restart</button>--------->
       
-  <button class="restart_btn" onclick="resetValues()">
+  <button class="restart_btn" onclick="noAction()">
     <span class="shadow"></span>
     <span class="edge"></span>
     <span class="front text"> Restart</span>
@@ -193,43 +234,16 @@
 
     <!---------------------------------------Page 3---------------------------->
     <div class="page-3 hidden" id="page3" onclick="showPage('page3')">
-      <h2>Custom Typing Tests</h2>
-      <div class="header">
-        <div class="wpm">
-          <div class="header_text">WPM</div>
-          <div class="curr_wpm">100</div>
-        </div>
-        <div class="cpm">
-          <div class="header_text">CPM</div>
-          <div class="curr_cpm">100</div>
-        </div>
-        <div class="errors">
-          <div class="header_text">Errors</div>
-          <div class="curr_errors">0</div>
-        </div>
-        <div class="timer">
-          <div class="header_text">Time</div>
-          <div class="curr_time">60s</div>
-        </div>
-        <div class="accuracy">
-          <div class="header_text">% Accuracy</div>
-          <div class="curr_accuracy">100</div>
-        </div>
-      </div>
-  
-      <div class="quote">Click on the area below to start the game.</div>
-      <textarea class="input_area" placeholder="Start typing here..." oninput="processCurrentText()"onfocus="startGame()"></textarea>
-  
-      <!---------<button class="restart_btn" onclick="resetValues()">Restart</button>--------->
-      
-  <button class="restart_btn" onclick="resetValues()">
-    <span class="shadow"></span>
-    <span class="edge"></span>
-    <span class="front text"> Restart</span>
-  </button>
+      <h2>Welcome to Custom Typing Tests!</h2>
+      <br>
+      <h3 style="color: orangered;"> <i>  
+          <span>&lt;/&gt;</span> ... THIS PAGE IS STILL UNDER DEVELOPMENT, COME BACK LATER ... <span>&lt;/&gt;</span></i></h3>
+          <img src="Assets/Images/Software-engineer.png" alt="">
+     
+          <div class="loader"></div>
     </div>
 <!------------------------------Page 4--------------------------------------------->
-    <div class="page-4 hidden" id="page4" onclick="showPage('page3')">
+    <div class="page-4 hidden" id="page4" onclick="showPage('page4')">
 <h2>Welcome to Typing Competions!</h2>
 <p>Lets see who can type faster!</p>
 
@@ -239,8 +253,59 @@
 </label>
 </div>
     </div>
+<!------------------------------Page 5--------------------------------------------->
+    <div class="page-5 hidden" id="page5" onclick="showPage('page5')">
+      <h2 style="color: black;">Welcome to Multi-Player Typing Tests!</h2><br>
+      <p style="color: black;">Here you will be a ble to login with your usernames and password and join other <br> active 
+        players or else Create your own groups!</p>
+        <br>
+      <h3 style="color: orangered;"> <i>    <span>&lt;/&gt;</span> ... THIS PAGE IS STILL UNDER DEVELOPMENT, COME BACK LATER ... <span>&lt;/&gt;</span></i></h3>
+
+      <img src="Assets/Images/Programming.png">
+
+      <div class="loader"></div>
     
   </div> 
+
+  <div class="page-6 hidden" id="page6" onclick="showPage('page6')">
+   
+    <br>
+    <h3 style="color: orangered;"> <i>    <span>&lt;/&gt;</span> ... THIS PAGE IS STILL UNDER DEVELOPMENT, COME BACK LATER ... <span>&lt;/&gt;</span></i></h3>
+    <img src="Assets/Images/Develpment--.png">
+ 
+<div class="loader"></div>
+</div> 
+
+<div class="page-7 hidden" id="page7" onclick="showPage('page7')">
+    <br>
+  <h3 style="color: orangered;"> <i>    <span>&lt;/&gt;</span> ... THIS PAGE IS STILL UNDER DEVELOPMENT, COME BACK LATER ... <span>&lt;/&gt;</span></i></h3>
+
+  <div class="loader-3">
+    <div class="blue">
+  </div></div>
+  <div class="loader"></div>
+</div>
+
+<div class="page-8 hidden" id="page8" onclick="showPage('page8')">
+  <br>
+  <h2 style="color: black;">Are you Ready to take a Test and Earn a Certificate for it?</h2><br>
+<h3 style="color: orangered;"> <i>  
+    <span>&lt;/&gt;</span> ... STILL COOKING YOUR RAMEN <i class="fa-solid fa-cookie"></i>, COME BACK LATER ... <span>&lt;/&gt;</span></i></h3>
+
+<div class="loader-4">
+  <div class="panWrapper">
+    <div class="pan">
+      <div class="food"></div>
+      <div class="panBase"></div>
+      <div class="panHandle"></div>
+    </div>
+    <div class="panShadow"></div>
+  </div>
+</div>
+
+
+<div class="loader"></div>
+</div>
       </div> 
           </div>
 

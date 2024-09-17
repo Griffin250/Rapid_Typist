@@ -9,6 +9,10 @@ body{
     font-family: Arial, sans-serif;
     
 }
+h2{
+  color: black;
+ 
+}
 .navbar{
     background: rgb(21, 27, 46);
     width: 100%;
@@ -38,9 +42,19 @@ body{
     margin: 0 auto;
     justify-content: space-between;
 }
-.other-links{
-    list-style:none;
-    display: flex;
+option{
+  display: flex;
+  margin: auto;
+  overflow-y: visible;
+}
+select{
+  outline: none;
+  width: 12rem;
+  height: 1.5rem;
+  border-radius: 0.2rem;
+  margin: 0.4rem;
+  overflow-y: visible;
+
 }
 .link{
     color: white;
@@ -550,6 +564,196 @@ button {
  button:focus:not(:focus-visible) {
   outline: none;
  }
+/* From Uiverse.io by satyamchaudharydev */ 
+.loader {
+  display: block;
+  --height-of-loader: 4px;
+  --loader-color: orangered;
+  width: 50%;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.2);
+  position: absolute;
+  margin-left: -6%;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+  ;
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
+
+
+/* From Uiverse.io by Fujitawa */ 
+.loader-3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 400px;
+  margin: 2% 20%;
+  border-radius: 50%;
+  box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 1),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.loader-3::before {
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 1),
+    10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blue {
+  height: 186px;
+  width: 220px;
+  position: absolute;
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.blue::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  border-radius: 50%;
+  width: 30px;
+  background: linear-gradient(45deg, #336dff, #5c89ff);
+  box-shadow: 0 5px 10px rgb(0 0 0 / 30%);
+}
+
+/* From Uiverse.io by vinodjangid07 */ 
+.fa-cookie{
+  font-size: 1.5rem;
+  color: rgb(196, 148, 57);
+}
+.loader-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 5%;
+  margin-top: -10%;
+}
+.panWrapper {
+  width: 30rem;
+  height: 20rem;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pan {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: fit-content;
+  animation: cooking 1.7s infinite;
+}
+@keyframes cooking {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top right;
+  }
+  10% {
+    transform: rotate(-4deg);
+    transform-origin: top right;
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.food {
+  position: absolute;
+  width: 40%;
+  height: 6px;
+  background: linear-gradient(to bottom, rgb(82, 33, 33), rgb(200, 106, 106));
+  left: 10px;
+  border-radius: 50%;
+  animation: flip 1.7s infinite;
+  z-index: 2;
+}
+@keyframes flip {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-100px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+.panBase {
+  z-index: 3;
+  width: 50%;
+  height: 22px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background: linear-gradient(to top, rgb(3, 156, 156), rgb(10, 191, 191));
+}
+.panHandle {
+  width: 40%;
+  background: linear-gradient(to bottom, rgb(18, 18, 18), rgb(74, 74, 74));
+  height: 10px;
+  border-radius: 10px;
+}
+.panShadow {
+  width: 70px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.21);
+  margin-left: 15px;
+  border-radius: 10px;
+  animation: shadow 1.7s infinite;
+  filter: blur(5px);
+}
+@keyframes shadow {
+  0% {
+    transform: scaleX(0.7);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0.7);
+  }
+}
 
   /*......................................................Footer...............................*/
   footer{
