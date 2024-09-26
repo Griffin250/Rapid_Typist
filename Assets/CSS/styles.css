@@ -13,13 +13,15 @@ h2{
   color: black;
  
 }
+#loginPage{
+  background: black;
+}
 .navbar{
     background: rgb(21, 27, 46);
     width: 100%;
     height: auto;
     padding: 0 1rem;
     top: 0px;
-  
 }
 .nav-container-1{
     display: flex;
@@ -39,8 +41,14 @@ h2{
 }
 .nav-container-2{
     display: flex;
-    margin: 0 auto;
+    margin:  auto;
+    color: black;
     justify-content: space-between;
+}
+.nav-container-2 h3{
+  color: white;
+  font-size: 20px;
+  display: none;
 }
 option{
   display: flex;
@@ -54,7 +62,7 @@ select{
   border-radius: 0.2rem;
   margin: 0.4rem;
   overflow-y: visible;
-
+display: none;
 }
 .link{
     color: white;
@@ -119,6 +127,7 @@ select{
     color: white;
     margin: 5px 12px ;
     text-align: center;
+    cursor: pointer;
 }
 .account-link:hover{
     text-decoration: underline 1.5px rgb(177, 156, 156);
@@ -185,11 +194,17 @@ select{
     text-align: center;
     margin: 1.5rem auto;
 }
- h1{
+ .home h1{
     font-size: 2.5rem;
+    font-weight: 800;
  }
+ h1{
+  font-size: 2.5rem;
+  font-weight: 800;
+}
  p{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
  }
 
  .column-wrapper{
@@ -253,7 +268,9 @@ select{
     padding: 0 8px 0 0;
     font-size: 1rem;
 }
-
+.text-blue-500{
+  cursor: pointer;
+}
   /*.............................................Toggler................................*/
 /* Light Theme */
 body.light-theme {
@@ -362,6 +379,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin:50px auto;
+    height: 75vh;
   }
   
   .heading {
@@ -754,22 +772,161 @@ button {
     transform: scaleX(0.7);
   }
 }
-
-  /*......................................................Footer...............................*/
-  footer{
-    background: radial-gradient(#fff, #ffd6d6);
-    height: auto;
-    width: 100%;
-    color: black;
-    text-align: center;
-    padding: 15px 0;
-    font-weight: bold;
-    font-style: italic;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 142.1 76.2% 36.3%;
+--primary-foreground: 355.7 100% 97.3%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 142.1 76.2% 36.3%;
   }
-  .fa-brands{
-    margin: 4px 20px;
+  .dark {
+    --background: 20 14.3% 4.1%;
+--foreground: 0 0% 95%;
+--popover: 0 0% 9%;
+--popover-foreground: 0 0% 95%;
+--card: 24 9.8% 10%;
+--card-foreground: 0 0% 95%;
+--primary: 142.1 70.6% 45.3%;
+--primary-foreground: 144.9 80.4% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 0 0% 15%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 12 6.5% 15.1%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 85.7% 97.3%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 142.4 71.8% 29.2%;
+  }
+}
+
+
+  /*......................................................Footer....................  ...........*/
+  footer{
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding: 5px 0;
+    opacity: 0.6;
+    box-shadow: 1px 1px 1px 1px black;
+  }
+  footer:hover{
+    opacity: 1;
+    transition: 0.3s;
   }
   .developer{
     color: orangered;
     text-decoration: none;
   }
+
+
+
+
+
+
+
+  /*-----------------------------------------------------------------------------------------------------------*/
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+ .navbar{
+  display:inline-block;
+  width: 140%;
+ }
+ .nav-menu{
+  display: none;
+ }
+ .page-theme{
+  display: none;
+ }
+ .logo{
+  font-size: 20px;
+  color: orangered;
+  font-weight: 800;
+ }
+ .web-icon{
+  width: 50px;
+ }
+ .text h1{
+font-size: 24px;
+ }
+ .text p{
+  font-size: 18px;
+   }
+ .column-1{
+  width: 25%;
+  margin: 0;
+  padding: 2px;
+ }
+ .column-1 p{
+  display: none;
+ }
+ .column-1 h2{
+  display: inline-block;
+  font-size: 14px;
+ }
+ .column-2{
+  display: flexbox;
+  padding: 5px;
+ 
+ }
+ .header{
+  display: inline-block;
+ }
+ .header_text{
+  width:auto;
+  display: flex;
+ }
+ .loader-3{
+  display:none;
+ }
+ .loader{
+  margin: 25% auto;
+  width: 45%;
+ }
+ .page-2 h1{
+  font-size: 20px;
+ }
+ .page-4{
+  display: none;
+ }
+ .loader-4{
+  display: none;
+ }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+ 
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .example {background: blue;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .example {background: orange;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .example {background: pink;}
+}

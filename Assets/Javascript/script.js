@@ -1,5 +1,27 @@
 //............Page interactions...............// 
+const loginPage = document.getElementById("loginPage");
+const accountLink = document.getElementById("accountLink");
+const page1 = document.getElementById("page1");
 
+const page2 = document.getElementById("page2");
+const page3 = document.getElementById("page3");
+const page4 = document.getElementById("page4");
+const row_1 = document.getElementById("row_1");
+
+function showLoginPage(){
+  loginPage.style.display = "block";
+  }
+
+const createAccountPage = document.getElementById("createAccountPage");
+const createAccountButton =document.getElementById("createAccountButton");
+
+createAccountPage.style.display = "none";
+function openCreateAccountPage(){
+  loginPage.style.display = "none";
+  createAccountPage.style.display = "block";
+}
+
+//--------------------------------------------
 function showPage(pageId) {
   // Hide all sections
   var pages = document.querySelectorAll('div[id^="page"]');
@@ -7,11 +29,12 @@ function showPage(pageId) {
       page.classList.add('hidden');
   });
 
-  // Show the selected section
+  //------------------- Show the selected section-----------------------
   var pageToShow = document.getElementById(pageId);
   if (pageToShow) {
       pageToShow.classList.remove('hidden');
   }
+  loginPage.style.display="none";
 }
 
     //........................... Add active class to the current button (highlight it)
@@ -45,7 +68,7 @@ function toggleTheme() {
   }
 }
 
-// Load saved theme on page load
+// --------------------Load saved theme on page load
 window.onload = function() {
   // Get theme preference from localStorage
   const savedTheme = localStorage.getItem('theme') || 'light';
@@ -54,7 +77,7 @@ window.onload = function() {
 };
 
 
-// define the time limit
+// -------------------------------------------------define the time limit-------------------------------------------
 let TIME_LIMIT = 60;
 
 // define quotes to be used
