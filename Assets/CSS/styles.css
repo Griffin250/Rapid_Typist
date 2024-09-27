@@ -872,7 +872,7 @@ font-size: 24px;
  .column-1{
   width: 25%;
   margin: 0;
-  padding: 2px;
+  padding: 0 2px; 
  }
  .column-1 p{
   display: none;
@@ -883,7 +883,9 @@ font-size: 24px;
  }
  .column-2{
   display: flexbox;
-  padding: 5px;
+  padding: 4px;
+  height: 100vh;
+  margin: 0 0 10px 10px;
  
  }
  .header{
@@ -897,15 +899,32 @@ font-size: 24px;
   display:none;
  }
  .loader{
-  margin: 25% auto;
-  width: 45%;
+  margin: 30% 5%;
+  width: 50%;
  }
  .page-2 h1{
   font-size: 20px;
  }
  .page-4{
-  display: none;
+  display: inline-block;
+  padding: 0;
+  width: auto;
+  margin: auto;
+  text-align: center;
  }
+ .page-4 h2{
+  font-size: 13px;
+  font-weight: 800;
+  margin: auto;
+  display: flex;
+ }.page-4 p{
+  font-size: 14px;
+ }
+ :input{
+  margin: 0 -30%;
+  width: 50px;
+ }
+
  .loader-4{
   display: none;
  }
